@@ -28,6 +28,17 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # Your code here
 
+    if len(arr) > 1:
+
+        mid = len(arr)//2
+        LHS = arr[0:mid]
+        RHS = arr[mid:]
+
+        LHS = merge_sort(LHS)
+        RHS = merge_sort(RHS)
+
+        arr = merge(LHS, RHS)
+
     return arr
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't
